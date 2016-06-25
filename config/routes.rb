@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'token/receive'
-
-  get 'profile/profile'
-
   get 'login/index'
-  get 'profile/index'
+  root 'login#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
