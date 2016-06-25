@@ -3,7 +3,6 @@ class TokenController < ApplicationController
   attr_accessor :firstname
 
   def receive
-    # http://localhost/token/receive?state=&code=52d207e946e9843a89fa0a34c029bca0fc0e30a6
     @errors=params["error"]
 
     if !params.has_key?("code") || params["code"].blank?
