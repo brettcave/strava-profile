@@ -1,0 +1,10 @@
+<h1>Your Strava profile</h1>
+<p><%=  @firstname %>'s ride totals</p>
+<table>
+    <tr><td># of rides</td><td><%= @art["count"] %></td></tr>
+    <tr><td>Distance</td><td><%=  number_with_delimiter(@art["distance"]/1000) %>km</td></tr>
+    <tr><td>Moving time</td><td><%= humanize @art["moving_time"] %></td></tr>
+    <tr><td>Elapsed time</td><td><%= humanize @art["elapsed_time"] %></td></tr>
+    <tr><td>Elevation gain</td><td><%= number_with_delimiter(@art["elevation_gain"]) %>m (<%= number_with_delimiter(@art["elevation_gain"]/1000) %>km)</td></tr>
+
+</table>
