@@ -13,6 +13,11 @@ class TokenController < ApplicationController
     access_token,athlete_id = authenticate(code)
     strava_stats = get_strava_stats(access_token,athlete_id)
     @art = strava_stats["all_ride_totals"]
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @art }
+    end
   end
 
 
