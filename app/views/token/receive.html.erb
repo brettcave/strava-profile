@@ -1,10 +1,23 @@
-<h1>Your Strava profile</h1>
-<p><%=  @firstname %>'s ride totals</p>
-<table>
+<h3><%= @firstname %>'s all time cycling totals</h3>
+<table cellpadding="2">
     <tr><td># of rides</td><td><%= @art["count"] %></td></tr>
-    <tr><td>Distance</td><td><%=  number_with_delimiter(@art["distance"]/1000) %>km</td></tr>
+    <tr><td>Distance</td><td><%=  number_with_delimiter(@art["distance"]/1000) %> km</td></tr>
     <tr><td>Moving time</td><td><%= humanize @art["moving_time"] %></td></tr>
     <tr><td>Elapsed time</td><td><%= humanize @art["elapsed_time"] %></td></tr>
-    <tr><td>Elevation gain</td><td><%= number_with_delimiter(@art["elevation_gain"]) %>m (<%= number_with_delimiter(@art["elevation_gain"]/1000) %>km)</td></tr>
+    <tr><td>Elevation gain</td><td><%= number_with_delimiter(@art["elevation_gain"]) %> m (<%= number_with_delimiter(@art["elevation_gain"]/1000) %> km)</td></tr>
+</table>
 
+<br />
+You can bookmark this page to get your all time elevation gain here without integrating it to your profile.<br />
+This web page address will show YOUR all-time cycling stats to anyone you share the link with.<br />
+
+<br />
+
+<%=  render "shared/instructions" %>
+
+
+<h3>Personal info</h3>
+<table>
+    <tr><td><strong>Athlete ID</strong>:</td><td><span id="stravaAthleteId"><%= @art["athlete_id"] %></span></td></tr>
+    <tr><td><strong>Code</strong>:</td><td><span id="stravaCode"><%= @code %></span></td></tr>
 </table>
