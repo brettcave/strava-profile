@@ -44,8 +44,10 @@ function addCommas(nStr) {
             // console.log("Values found, setting GM values - " + SPCFromDom.html() + " and " + SAIDFromDom.html());
             GM_setValue('stravaProfileCode',SPCFromDom.html());
             GM_setValue('stravaAthleteId',SAIDFromDom.html());
+            stravaProfileCode = GM_getValue('stravaProfileCode');
+            stravaAthleteId = GM_getValue('stravaAthleteId');
             if (typeof noticeArea !== 'undefined') {
-                noticeArea.append($('<div>Values set, head over to your Strava.com profile now. Click <a href="#" id="resetLink">here</a> to unset.</div>'));
+                noticeArea.append($('<div>Values set, head over to your <a href="https://www.strava.com/athletes/'+stravaAthleteId+'">Strava.com profile</a> now. Click <a href="#" id="resetLink">here</a> to unset.</div>'));
                 $('a#resetLink').on("click", function() {
                     try {
                         resetStravaStore();
@@ -61,7 +63,7 @@ function addCommas(nStr) {
         // Code is configured.
         // console.log("Configured: " + stravaProfileCode + ";" + stravaAthleteId);
         if (typeof noticeArea !== 'undefined') {
-            noticeArea.append($('<div>Status: configured. Click <a href="#" id="resetLink">here</a> to unset.</div>'));
+            noticeArea.append($('<div>Status: configured (<a href="https://www.strava.com/athletes/'+stravaAthleteId+'">Strava.com profile</a>). Click <a href="#" id="resetLink">here</a> to unset.</div>'));
             $('a#resetLink').on("click", function() {
                 try {
                     resetStravaStore();
