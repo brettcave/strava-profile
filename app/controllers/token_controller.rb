@@ -9,8 +9,8 @@ class TokenController < ApplicationController
       raise("Authorization failed (#{@errors})")
     end
 
-    code=params["code"]
-    access_token,athlete_id = authenticate(code)
+    @code=params["code"]
+    access_token,athlete_id = authenticate(@code)
     strava_stats = get_strava_stats(access_token,athlete_id)
     @art = strava_stats["all_ride_totals"]
     @art["athlete_id"] = athlete_id

@@ -1,0 +1,22 @@
+
+<div id="noticeArea">
+    <% if !@code.nil? and !@art.nil? and !@art["athlete_id"].nil? -%>
+        <span id="stravaCode" style="display:none;"><%= @code %></span>
+        <span id="stravaAthleteId" style="display:none;"><%= @art["athlete_id"] %></span>
+    <% end %>
+</div>
+<br />
+
+<h3>Setup instructions</h3>
+To get your all-time elevation gain on your Strava.com profile, you need to complete a few steps.
+
+<ol>
+    <li>Firefox with <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank">Greasemonkey</a> installed.</li> OR Chrome with <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" target="_blank">Tampermonkey</a> installed.</li>
+    <li>Install <a href="/script/StravaAllTimeElevationGain.user.js">this user script</a>.</li>
+    <li><a href="https://www.strava.com/oauth/authorize?client_id=12179&response_type=code&redirect_uri=<%= @redirect_to_host %>/token/receive&scope=view_private&approval_prompt=auto"><%= image_tag("LogInWithStrava.png") %></a> and authorize this site to add your all-time elevation gain to your Strava.</li>
+</ol>
+
+You can skip step 1 and 2 if you don't want to automatically integrate onto your Strava profile page and prefer to check your stats here. <br />
+
+<br />
+<br />

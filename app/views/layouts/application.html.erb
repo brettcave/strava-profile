@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StravaProfile</title>
+  <title>Strava.com All-Time Elevation Gain</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,5 +10,7 @@
 
 <%= yield %>
 
+<p>No data is stored or published by this service. It uses your authorization to push elevation gain onto your profile in your browser.</p>
+<p><a href="https://github.com/brettcave/strava-profile" target="_blank">Source code</a>.</p>
 </body>
 </html>
