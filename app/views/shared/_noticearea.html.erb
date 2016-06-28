@@ -1,0 +1,6 @@
+<div id="noticeArea">
+    <% if !@code.nil? and !@art.nil? and !@art["athlete_id"].nil? -%>
+        <span id="stravaCode" style="display:none;"><%= @code %></span>
+        <span id="stravaAthleteId" style="display:none;"><%= @art["athlete_id"] %></span>
+    <% end %>
+</div>

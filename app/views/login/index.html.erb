@@ -1,6 +1,9 @@
-<%=  render "shared/instructions" %>
+Get your All-Time Cycling Elevation Gain.
+<br />
+<br />
+<a href="https://www.strava.com/oauth/authorize?client_id=12179&response_type=code&redirect_uri=<%= @redirect_to_host %>/token/receive&scope=view_private&approval_prompt=auto"><%= image_tag("LogInWithStrava.png") %></a>
 
 <br />
-
-
+<br />
+<%=  render "shared/noticearea" %>
 
